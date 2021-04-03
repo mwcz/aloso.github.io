@@ -255,7 +255,7 @@ impl Angle {
 
 By ensuring that the angle is always in [0; 360), we can implement operations such as equality (where 0° == 360°) very easily. But wait! Since the field is public, a user of the API can create an `Angle` object without calling the `new` function, or modify it without checking the invariant.
 
-By making the field private, the struct's implementation details are hidden. This is called _encapsulation_: Within this module, we still have to take special care that the invariant is preserved, but if the code is correct, the public API is impossible to use incorrectly.
+If we make the field private by changing `pub f32` to `f32`, the struct's implementation details are hidden. This is called _encapsulation_: Within this module, we still have to take special care that the invariant is preserved, but if the code is correct, the public API is impossible to use incorrectly.
 
 === Fine-grained visibility
 
